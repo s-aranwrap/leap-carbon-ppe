@@ -2,6 +2,10 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
 def scatter_variable(name, year, ensemble):
+    '''
+    Input: Variable name, Year (not index), Ensemble #
+    Return: Plot/Global Map
+    '''
     fig, ax = plt.subplots(subplot_kw={'projection': ccrs.PlateCarree()}, figsize=(10, 6))
     ax.coastlines()
     ax.add_feature(cfeature.BORDERS, linestyle=':')
