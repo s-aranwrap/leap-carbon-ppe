@@ -5,6 +5,8 @@ def scatter_variable(name, year, ensemble):
     '''
     Input: Variable name, Year (not index), Ensemble #
     Return: Plot/Global Map
+
+    Example: scatter_variable("COL_FIRE_CLOSS_gridded_amean",2020, 1)
     '''
     fig, ax = plt.subplots(subplot_kw={'projection': ccrs.PlateCarree()}, figsize=(10, 6))
     ax.coastlines()
@@ -20,5 +22,5 @@ def scatter_variable(name, year, ensemble):
     
     plt.colorbar(sc, ax=ax, orientation='vertical', label=name)
     
-    plt.title(f"{name} in {year}, ensemble #{ensemble}")
+    plt.title(f"{name} in {year}, ensemble #{ensemble}\n({ds[name].long_name})")
     plt.show()
